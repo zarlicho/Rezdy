@@ -55,10 +55,10 @@ def portal2(Clnk):
     ph = phone.split('Phone: ',1)[1] #Phone 
     print(ph[0:]) #phone
     try:
-        usname = source_code.xpath("/html/body/div[1]/div[3]/div[2]/div/div[3]/div[1]/section[3]/div/div[1]/div[2]/div[1]/p[1]")
+        usname = source_code.xpath("//*[@id='overview']/section[3]/div/div[1]/div[2]/div[1]/p[1]")
         uname=usname[0].text_content()
     except:
-        usname = source_code.xpath("/html/body/div[1]/div[3]/div[2]/div/div[3]/div[1]/section[3]/div/div[1]/div[1]/div[1]/p[1]")
+        usname = source_code.xpath("//*[@id='overview']/section[3]/div/div[1]/div[1]/div[1]/p[1]")
         uname=usname[0].text_content()
     comEmail = WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.XPATH, "/html/body/div[1]/div[3]/div[2]/div/div[3]/div[1]/section[3]/div/div[2]/h4[4]/span/a")))
     compe = comEmail.get_attribute("href")
