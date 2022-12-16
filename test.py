@@ -43,11 +43,11 @@ def portal2(Clnk):
     address = ""
     source_code = html.fromstring(byte_data)
     try:
-        ards = source_code.xpath("/html/body/div[1]/div[3]/div[2]/div/div[3]/div[1]/section[3]/div/div[1]/div[2]/div[2]/a/p")
+        ards = source_code.xpath("//*[@id='overview']/section[3]/div/div[1]/div[2]/div[2]/a/p")
         adres = ards[0].text_content()
         address=adres
     except:
-        ards = source_code.xpath("/html/body/div[1]/div[3]/div[2]/div/div[3]/div[1]/section[3]/div/div[1]/div[1]/div[2]/a/p")
+        ards = source_code.xpath("//*[@id='overview']/section[3]/div/div[1]/div[1]/div[2]/a/p")
         adres = ards[0].text_content()
         address=adres
     cntk = source_code.xpath("//p[@class='truncate']")
