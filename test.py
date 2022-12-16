@@ -34,14 +34,6 @@ opt.add_argument("user-data-dir=C:\\chromeprofile")
 driver = webdriver.Chrome(executable_path="D:\\Games\\chromedriver.exe", chrome_options=opt)
 actions = ActionChains(driver)
 
-# def saveData(i, title, comname,location,comadr,cnp,phone,comweb):
-#     outSheet.write(i+1,0,title)
-#     outSheet.write(i+1,1,comname)
-#     outSheet.write(i+1,2,location)
-#     outSheet.write(i+1,3,comadr)
-#     outSheet.write(i+1,4,cnp)
-#     outSheet.write(i+1,5,phone)
-#     outSheet.write(i+1,6,comweb)
 
 def portal2(Clnk):
     driver.get(Clnk)
@@ -69,7 +61,6 @@ def portal2(Clnk):
         usname = source_code.xpath("/html/body/div[1]/div[3]/div[2]/div/div[3]/div[1]/section[3]/div/div[1]/div[1]/div[1]/p[1]")
         uname=usname[0].text_content()
     comEmail = WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.XPATH, "/html/body/div[1]/div[3]/div[2]/div/div[3]/div[1]/section[3]/div/div[2]/h4[4]/span/a")))
-    # compName = WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.XPATH, "/html/body/div[1]/div[3]/div[2]/div/section/div[1]/div[1]/h3")))
     compe = comEmail.get_attribute("href")
     driver.back()
     return uname,address,ph[0:], compe
