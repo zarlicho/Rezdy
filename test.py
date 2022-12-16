@@ -81,7 +81,7 @@ def portal1():
             tl=title.text
             compannyName = WebDriverWait(driver, 90).until(EC.presence_of_element_located((By.XPATH, "/html/body/div[1]/div[3]/form/strong/strong/div[3]/div/div[3]/section/div/article[{tnum}]/div[2]/div[2]/h4/a".format(tnum=y))))
             name=compannyName.text
-            
+            comlin = compannyName.get_attribute("href")
             lc=loc.text
             # logic here
             state = ""
@@ -112,7 +112,7 @@ def portal1():
             outSheet.write(nilaia+1,5,phone)
             outSheet.write(nilaia+1,6,compe)
             outSheet.write(nilaia+1,7,state)
-            outSheet.write(nilaia+1,8,compannyName.get_attribute("href"))
+            outSheet.write(nilaia+1,8,comlin)
             print(y)
     outWorkbook.close()
 
